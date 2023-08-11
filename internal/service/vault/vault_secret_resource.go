@@ -535,10 +535,10 @@ func (s *VaultSecretResourceCrud) mapToSecretContentDetails(fieldKeyFormat strin
 			tmp := content.(string)
 			details.Content = &tmp
 		}
-		if name, ok := s.D.GetOkExists(fmt.Sprintf(fieldKeyFormat, "name")); ok {
-			tmp := name.(string)
-			details.Name = &tmp
-		}
+		// if name, ok := s.D.GetOkExists(fmt.Sprintf(fieldKeyFormat, "name")); ok {
+		// 	tmp := name.(string)
+		// 	details.Name = &tmp
+		// }
 		if stage, ok := s.D.GetOkExists(fmt.Sprintf(fieldKeyFormat, "stage")); ok {
 			details.Stage = oci_vault.SecretContentDetailsStageEnum(stage.(string))
 		}
